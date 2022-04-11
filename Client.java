@@ -104,3 +104,16 @@ public class Client {
                
    }
 }
+
+/*  
+boolean exists = myObj.exists();
+        if (exists == true) {
+            myObj.setExecutable(false);
+            myObj.setReadable(false);
+            myObj.setWritable(false);
+            System.out.println("File permissions changed.");
+            System.out.println("Executable:"+ myObj.canExecute());
+            System.out.println("Readable: " + myObj.canRead());
+            System.out.println("Writable: " + myObj.canWrite());
+            
+            */
