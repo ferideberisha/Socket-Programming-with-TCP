@@ -12,13 +12,19 @@ public class Server {
         this.serverSocket = serverSocket;
   }
   
-  
-  
-  
-  
-  
-  
-  
+  public void startServer() {
+        try {
+            while (!serverSocket.isClosed()) {
+                Socket socket = serverSocket.accept();
+                System.out.println("A new client has connected!");
+                ClientHandler clientHandler = new ClientHandler(socket);
+                Thread thread = new Thread(clientHandler);
+                thread.start();
+            }
+        } catch (IOException e) {
+            closeServerSocket();
+        }
+    }  
   
   public static void main (String [] args){
      
