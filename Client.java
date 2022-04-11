@@ -44,6 +44,8 @@ public class Client {
             @Override
             public void run() {
                 String msgFromGroupChat;
+                while (socket.isConnected()) {
+                    try {
                
                
    public static void main (String [] args){
