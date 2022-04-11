@@ -50,6 +50,14 @@ public class Client {
                         String messageFromServer = bufferedReader.readLine();
                         System.out.println(msgFromGroupChat);
                     } catch (IOException e) {
+                       e.printStackTrace();
+                    	System.out.println("Error recieving message from the client");
+                        closeEverything(socket, bufferedReader, bufferedWriter);
+                    }
+                }
+            }
+        }).start();
+    }
                
                
    public static void main (String [] args){
