@@ -18,6 +18,9 @@ public class Client {
             this.username = username;
             this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.bufferedWriter= new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+      } catch (IOxception e){
+         
+            closeEverything(socket, bufferedReader, bufferedWriter);
       }
    
    }
