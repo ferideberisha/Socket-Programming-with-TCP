@@ -24,6 +24,15 @@ public class Client {
       }
    
    }
+   
+   public void sendMessage(){
+      try{
+            bufferedWriter.write(username);
+            bufferedWriter.newLine();
+            Scanner scanner = new Scanner(System.in);
+            bufferedWriter.flush();
+      }
+   }
    public static void main (String [] args){
    
    }
