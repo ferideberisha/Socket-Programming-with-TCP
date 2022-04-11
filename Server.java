@@ -39,6 +39,25 @@ public class Server {
     	}
     }
     
+    public void recieveMessageFromClient() {
+		new Thread (new Runnable(){
+			@Override
+			public void run() {
+				while(socket.isConnected()) {
+					try {
+						String messageFromClient = bufferedReader.readLine();
+						
+					}catch (IOException e) {
+						e.printStackTrace();
+						System.out.println("Error recievingh message from the client");
+						closeEverything(socket, bufferedReader, bufferedWriter);
+						break;
+					}
+				}
+			}
+		}).start();
+	}
+    
   
   public static void main (String [] args){
      
