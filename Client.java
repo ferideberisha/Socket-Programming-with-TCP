@@ -35,6 +35,7 @@ public class Client {
               bufferedWriter.newLine();
               bufferedWriter.flush();
        } catch (IOException e) {
+              System.out.println("Error sending message to the client");
               closeEverything(socket, bufferedReader, bufferedWriter);
         }
    }
