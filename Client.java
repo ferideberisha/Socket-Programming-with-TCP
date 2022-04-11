@@ -46,6 +46,10 @@ public class Client {
                 String msgFromGroupChat;
                 while (socket.isConnected()) {
                     try {
+                        msgFromGroupChat = bufferedReader.readLine();
+                        String messageFromServer = bufferedReader.readLine();
+                        System.out.println(msgFromGroupChat);
+                    } catch (IOException e) {
                
                
    public static void main (String [] args){
