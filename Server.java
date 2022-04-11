@@ -17,6 +17,8 @@ public class Server {
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
                 System.out.println("A new client has connected!");
+                InetAddress my_localhost = InetAddress.getLocalHost();
+                System.out.println("The IP Address of client is : " + (my_localhost.getHostAddress()).trim());
                 ClientHandler clientHandler = new ClientHandler(socket);
                 Thread thread = new Thread(clientHandler);
                 thread.start();
