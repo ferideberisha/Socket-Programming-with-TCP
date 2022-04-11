@@ -80,24 +80,19 @@ public class Client {
     	      File myObj = new File("C:\\\\Users\\\\Admin\\\\Desktop\\\\VM Argument.txt");
     	      Scanner myReader = new Scanner(myObj);  
     	      while (myReader.hasNextLine()) {
-    	        String data = myReader.nextLine();
-    	        System.out.println(data);
+                String data = myReader.nextLine();
+                System.out.println(data);
+                FileWriter myWriter = new FileWriter("C:\\Users\\Admin\\Desktop\\source.txt");
+                myWriter.write("Files in Java might be tricky, but it is fun enough!");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
     	      }
-    	      myReader.close();
+               myReader.close();
     	    } catch (FileNotFoundException e) {
     	      System.out.println("An error occurred.");
     	      e.printStackTrace();
-    	    } 
-    	
-    	 try {
-             FileWriter myWriter = new FileWriter("C:\\Users\\Admin\\Desktop\\source.txt");
-             myWriter.write("Files in Java might be tricky, but it is fun enough!");
-             myWriter.close();
-             System.out.println("Successfully wrote to the file.");
-           } catch (IOException e) {
-             System.out.println("An error occurred.");
-             e.printStackTrace();
-           }
+    	    }
+      
       Scanner scanner = new Scanner(System.in);
       System.out.print("Enter your username for the group chat: ");
       String username = scanner.nextLine();
