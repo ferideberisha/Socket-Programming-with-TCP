@@ -64,6 +64,13 @@ public class Client {
             if (bufferedReader != null) {
                 bufferedReader.close();
             }
+            if (bufferedWriter != null) {
+                bufferedWriter.close();
+            }
+            if (socket != null) {
+                socket.close();
+            }
+
                
                
    public static void main (String [] args){
