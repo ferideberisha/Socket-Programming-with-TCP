@@ -26,55 +26,15 @@ public class Server {
         }
     }  
   
-     public void sendMessageToClient(String messageToClient) {
-    	try {
-    		bufferedWriter.write(messageToClient);
-    		bufferedWriter.newLine();
-    		bufferedWriter.flush();
-     	}
-    	catch (IOException e){
-    		e.printStackTrace();
-    		System.out.println("Error sending message to the client!");
-    		closeEverything(socket,bufferedReader, bufferedWriter);
-    	}
+     public void closeServerSocket() {
+        try {
+            if (serverSocket != null) {
+                serverSocket.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    
-    public void recieveMessageFromClient() {
-		new Thread (new Runnable(){
-			@Override
-			public void run() {
-				while(socket.isConnected()) {
-					try {
-						String messageFromClient = bufferedReader.readLine();
-						
-					}catch (IOException e) {
-						e.printStackTrace();
-						System.out.println("Error recievingh message from the client");
-						closeEverything(socket, bufferedReader, bufferedWriter);
-						break;
-					}
-				}
-			}
-		}).start();
-	}
-	
-	public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
-      	 try {
-               if (bufferedReader != null) {
-                   bufferedReader.close();
-               }
-               if (bufferedWriter != null) {
-                   bufferedWriter.close();
-               }
-               if (socket != null) {
-                   socket.close();
-               }
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-       
-      }
-	
     
   
   public static void main (String [] args)throws IOException {
