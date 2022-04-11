@@ -57,6 +57,24 @@ public class Server {
 			}
 		}).start();
 	}
+	
+	public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
+      	 try {
+               if (bufferedReader != null) {
+                   bufferedReader.close();
+               }
+               if (bufferedWriter != null) {
+                   bufferedWriter.close();
+               }
+               if (socket != null) {
+                   socket.close();
+               }
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       
+      }
+	
     
   
   public static void main (String [] args){
