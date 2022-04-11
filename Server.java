@@ -26,6 +26,20 @@ public class Server {
         }
     }  
   
+     public void sendMessageToClient(String messageToClient) {
+    	try {
+    		bufferedWriter.write(messageToClient);
+    		bufferedWriter.newLine();
+    		bufferedWriter.flush();
+     	}
+    	catch (IOException e){
+    		e.printStackTrace();
+    		System.out.println("Error sending message to the client!");
+    		closeEverything(socket,bufferedReader, bufferedWriter);
+    	}
+    }
+    
+  
   public static void main (String [] args){
      
      }
