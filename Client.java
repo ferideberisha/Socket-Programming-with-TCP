@@ -70,10 +70,12 @@ public class Client {
             if (socket != null) {
                 socket.close();
             }
-
-               
-               
-   public static void main (String [] args){
+          } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        
+   public static void main (String [] args) throws IOException {
    
    }
 }
