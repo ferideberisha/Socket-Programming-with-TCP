@@ -31,12 +31,14 @@ public class Client {
             bufferedWriter.newLine();
             Scanner scanner = new Scanner(System.in);
             bufferedWriter.flush();
-      }while (socket.isConnected()) {
+      } while (socket.isConnected()) {
               String messageToSend = scanner.nextLine();
               bufferedWriter.write(username + ": " + messageToSend);
               bufferedWriter.newLine();
-               bufferedWriter.flush();
-            }
+              bufferedWriter.flush();
+            } catch (IOException e) {
+              closeEverything(socket, bufferedReader, bufferedWriter);
+        }
    }
    public static void main (String [] args){
    
