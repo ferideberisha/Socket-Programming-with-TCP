@@ -58,6 +58,8 @@ public class Client {
             }
         }).start();
     }
+   
+    public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
                
                
    public static void main (String [] args){
