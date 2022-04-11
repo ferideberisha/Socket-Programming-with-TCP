@@ -6,7 +6,21 @@ import java.net.Socket;
 
 public class Server {
   
-    public static void main (String [] args){
+  private final ServerSocket serverSocket;
+
+  public Server(ServerSocket serverSocket) {
+        this.serverSocket = serverSocket;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  public static void main (String [] args){
      
      }
 }
