@@ -76,6 +76,14 @@ public class Client {
     }
         
    public static void main (String [] args) throws IOException {
-   
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("Enter your username for the group chat: ");
+      String username = scanner.nextLine();
+      Socket socket = new Socket("localhost", 7251);
+      
+      Client client = new Client(socket, username);
+      client.listenForMessage();
+      client.sendMessage(username);
+               
    }
 }
