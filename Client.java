@@ -39,6 +39,13 @@ public class Client {
               closeEverything(socket, bufferedReader, bufferedWriter);
         }
    }
+    public void listenForMessage() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String msgFromGroupChat;
+               
+               
    public static void main (String [] args){
    
    }
